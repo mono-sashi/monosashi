@@ -6,13 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalCount = cards.length;
   const MAX_COMPARE = 3;
 
-  const priceSelect = document.getElementById('f-price');
-  const roomSelect = document.getElementById('f-room');
+  const priceMinSelect = document.getElementById('f-price-min');
+  const priceMaxSelect = document.getElementById('f-price-max');
   const startSelect = document.getElementById('f-start');
   const serviceSelect = document.getElementById('f-service');
-  const bookingSelect = document.getElementById('f-booking');
   const twoPaxSelect = document.getElementById('f-twopax');
-  const featureSelect = document.getElementById('f-feature');
+  const checkInputs = Array.from(document.querySelectorAll('#filter-checks input[type="checkbox"]'));
   const resetBtn = document.getElementById('filter-reset');
   const resultCount = document.getElementById('result-count');
 
@@ -22,21 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let compareIds = [];
 
-  function inPriceRange(price, rangeValue) {
-    if (rangeValue === 'all') return true;
+  function inPriceRange(price, min, max) {
     if (!price) return false;
-    const ranges = {
-      r1: [15000, 20000],
-      r2: [20000, 25000],
-      r3: [25000, 30000],
-    };
-    const [min, max] = ranges[rangeValue];
     return price >= min && price <= max;
   }
 
-  function matchesRoom(card, value) {
-    if (value === 'all') return true;
-    return card.dataset.room === value;
+  function matchesRoom(card, roomRequired) {
+    if (!roomRequired) return true;
+    return card.dataset.room === 'yes';
   }
 
   function matchesStart(card, value) {
@@ -47,11 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function matchesService(card, value) {
     if (value === 'all') return true;
     return card.dataset.service === value;
-  }
-
-  function matchesBooking(card, value) {
-    if (value === 'all') return true;
-    return (card.dataset.booking || '').split(' ').includes(value);
   }
 
   function inTwoPaxRange(twoPaxNum, rangeValue) {
@@ -67,24 +54,31 @@ document.addEventListener('DOMContentLoaded', () => {
     return twoPaxNum >= min && twoPaxNum <= max;
   }
 
-  function matchesFeature(card, value) {
-    if (value === 'all') return true;
-    return (card.dataset.features || '').split('|').filter(Boolean).includes(value);
+  function matchesFeatures(card, wantedFeatures) {
+    if (wantedFeatures.length === 0) return true;
+    const cardFeatures = (card.dataset.features || '').split('|').filter(Boolean);
+    return wantedFeatures.some(f => cardFeatures.includes(f));
   }
 
   function applyFilters() {
+    const roomRequired = checkInputs.some(cb => cb.dataset.filter === 'room' && cb.checked);
+    const wantedFeatures = checkInputs
+      .filter(cb => cb.dataset.filter === 'feature' && cb.checked)
+      .map(cb => cb.value);
+    const min = Number(priceMinSelect.value);
+    const max = Number(priceMaxSelect.value);
+
     let visibleCount = 0;
     cards.forEach(card => {
       const price = Number(card.dataset.price) || null;
       const twoPaxNum = Number(card.dataset.twoPaxNum) || null;
       const show =
-        inPriceRange(price, priceSelect.value) &&
-        matchesRoom(card, roomSelect.value) &&
+        inPriceRange(price, min, max) &&
+        matchesRoom(card, roomRequired) &&
         matchesStart(card, startSelect.value) &&
         matchesService(card, serviceSelect.value) &&
-        matchesBooking(card, bookingSelect.value) &&
         inTwoPaxRange(twoPaxNum, twoPaxSelect.value) &&
-        matchesFeature(card, featureSelect.value);
+        matchesFeatures(card, wantedFeatures);
       card.style.display = show ? '' : 'none';
       if (show) visibleCount++;
     });
@@ -175,18 +169,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  [priceSelect, roomSelect, startSelect, serviceSelect, bookingSelect, twoPaxSelect, featureSelect].forEach(sel => {
+  priceMinSelect.addEventListener('change', () => {
+    if (Number(priceMinSelect.value) > Number(priceMaxSelect.value)) {
+      priceMaxSelect.value = priceMinSelect.value;
+    }
+    applyFilters();
+  });
+  priceMaxSelect.addEventListener('change', () => {
+    if (Number(priceMaxSelect.value) < Number(priceMinSelect.value)) {
+      priceMinSelect.value = priceMaxSelect.value;
+    }
+    applyFilters();
+  });
+  [startSelect, serviceSelect, twoPaxSelect].forEach(sel => {
     if (sel) sel.addEventListener('change', applyFilters);
   });
+  checkInputs.forEach(cb => cb.addEventListener('change', applyFilters));
 
   resetBtn.addEventListener('click', () => {
-    priceSelect.value = 'all';
-    roomSelect.value = 'all';
+    priceMinSelect.value = '15000';
+    priceMaxSelect.value = '40000';
     if (startSelect) startSelect.value = 'all';
     serviceSelect.value = 'all';
-    bookingSelect.value = 'all';
     twoPaxSelect.value = 'all';
-    featureSelect.value = 'all';
+    checkInputs.forEach(cb => { cb.checked = false; });
     applyFilters();
   });
 
