@@ -5,7 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>モノサシ | 西麻布の鮨を、選びやすく。</title>
 <meta name="description" content="西麻布の鮨店から、大切な相手を安心して連れていける店だけを厳選した11店舗を掲載。価格帯・特徴・個室の有無で絞り込んで比較できる意思決定サイト「モノサシ」です。">
+<link rel="canonical" href="https://sushi-monosashi.com/">
 <link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="モノサシ">
+<meta property="og:title" content="モノサシ | 西麻布の鮨を、選びやすく。">
+<meta property="og:description" content="西麻布の鮨店から、大切な相手を安心して連れていける店だけを厳選した11店舗を掲載。価格帯・特徴・個室の有無で絞り込んで比較できる意思決定サイト「モノサシ」です。">
+<meta property="og:url" content="https://sushi-monosashi.com/">
+<meta name="twitter:card" content="summary">
 </head>
 <body>
 
@@ -13,7 +20,7 @@
   <div class="container">
     <div class="logo">モノ<span>サシ</span></div>
     <nav class="nav-links">
-      <a href="index.html">店舗を探す</a>
+      <a href="nishiazabu/sushi/index.html">店舗を探す</a>
       <a href="columns/index.html">鮨屋の選び方</a>
     </nav>
   </div>
@@ -21,320 +28,32 @@
 
 <section class="hero">
   <div class="container">
-    <span class="tag">NISHIAZABU SUSHI GUIDE</span>
-    <h1>西麻布の鮨を、<br>選びやすく。</h1>
+    <span class="tag">SUSHI GUIDE</span>
+    <h1>鮨を、<br>選びやすく。</h1>
   </div>
 </section>
 
 <section class="stores">
   <div class="container">
     <div class="stores-head">
-      <h2>掲載店舗を比較する</h2>
-      <p>気になる店舗は「比較に追加」で最大3店舗まで並べて見られます。</p>
+      <h2>エリアを選ぶ</h2>
+      <p>「一番人気の店ではなく、あなたに一番合う店を」。エリア×鮨で、価格・個室・開始時間から比較して選べます。</p>
     </div>
 
-    <div class="filter-panel">
-      <div class="filter-group">
-        <h3 class="filter-group-title">どんな鮨屋がいい?<span>(あてはまるものを選ぶと、それに合う店だけが表示されます/複数選択可)</span></h3>
-        <div class="filter-checks" id="filter-checks">
-          <label class="check-pill"><input type="checkbox" data-filter="room" value="yes"><span>個室で使いたい</span></label>
-          <label class="check-pill"><input type="checkbox" data-filter="feature" value="コスパがいい"><span>コスパがいい</span></label>
-          <label class="check-pill"><input type="checkbox" data-filter="feature" value="落ち着いた雰囲気"><span>落ち着いた雰囲気</span></label>
-          <label class="check-pill"><input type="checkbox" data-filter="feature" value="大将との会話が楽しい"><span>大将との会話が楽しい</span></label>
-          <label class="check-pill"><input type="checkbox" data-filter="feature" value="王道の江戸前鮨"><span>王道の江戸前鮨</span></label>
-          <label class="check-pill"><input type="checkbox" data-filter="feature" value="モダンな鮨"><span>モダンな鮨</span></label>
-          <label class="check-pill"><input type="checkbox" data-filter="feature" value="鮪が強い"><span>鮪が強い</span></label>
-          <label class="check-pill"><input type="checkbox" data-filter="feature" value="シャリが特徴的"><span>シャリが特徴的</span></label>
-          <label class="check-pill"><input type="checkbox" data-filter="feature" value="つまみが充実"><span>つまみが充実</span></label>
-          <label class="check-pill"><input type="checkbox" data-filter="feature" value="ボリュームがある"><span>ボリュームがある</span></label>
-        </div>
-      </div>
-
-      <div class="filter-group">
-        <h3 class="filter-group-title">価格帯(コース料金)</h3>
-        <div class="price-range">
-          <select id="f-price-min" aria-label="価格帯 下限">
-            <option value="15000">¥15,000</option>
-            <option value="17500">¥17,500</option>
-            <option value="20000">¥20,000</option>
-            <option value="22500">¥22,500</option>
-            <option value="25000">¥25,000</option>
-            <option value="27500">¥27,500</option>
-            <option value="30000">¥30,000</option>
-            <option value="32500">¥32,500</option>
-            <option value="35000">¥35,000</option>
-          </select>
-          <span class="price-range-sep">〜</span>
-          <select id="f-price-max" aria-label="価格帯 上限">
-            <option value="17500">¥17,500</option>
-            <option value="20000">¥20,000</option>
-            <option value="22500">¥22,500</option>
-            <option value="25000">¥25,000</option>
-            <option value="27500">¥27,500</option>
-            <option value="30000">¥30,000</option>
-            <option value="32500">¥32,500</option>
-            <option value="35000">¥35,000</option>
-            <option value="40000" selected>¥40,000</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="filter-group filter-group-sub">
-        <div class="filterbar-item">
-          <div class="fb-text">
-            <label for="f-start">コース開始時間</label>
-            <select id="f-start">
-              <option value="all">すべて</option>
-              <option value="17">17時台</option>
-              <option value="18">18時台</option>
-            </select>
-          </div>
-        </div>
-        <div class="filterbar-item">
-          <div class="fb-text">
-            <label for="f-service">サービス料</label>
-            <select id="f-service">
-              <option value="all">すべて</option>
-              <option value="none">なし</option>
-              <option value="some">あり</option>
-              <option value="unknown">情報なし</option>
-            </select>
-          </div>
-        </div>
-        <div class="filterbar-item">
-          <div class="fb-text">
-            <label for="f-twopax">2名・料理利用額</label>
-            <select id="f-twopax">
-              <option value="all">すべて</option>
-              <option value="t1">〜¥40,000</option>
-              <option value="t2">¥40,000〜55,000</option>
-              <option value="t3">¥55,000〜</option>
-              <option value="unknown">情報なし</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <button type="button" id="filter-reset" class="filterbar-reset">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 4v4h-4M6 20v-4h4"/></svg>
-        条件をリセット
-      </button>
-    </div>
-    <div class="compare-result-bar">
-      <span id="result-count" class="result-count"></span>
+    <div class="cond-card-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+      <a href="nishiazabu/sushi/index.html" class="cond-card" style="padding:22px 24px;">
+        <span>
+          <span class="cond-card-label" style="font-size:16px;">西麻布の鮨</span><br>
+          <span style="font-size:12.5px;font-weight:400;color:var(--text-sub);">11店舗を掲載中(¥17,600〜¥38,500)</span>
+        </span>
+        <span class="cond-card-arrow">→</span>
+      </a>
     </div>
 
-    <div class="hikaku-grid" id="hikaku-grid">
-
-      <article class="hikaku-card" data-id="rizaki" data-name="鮨利﨑 西麻布" data-price="20000" data-room="yes" data-service="none" data-course-price="¥20,000(税込)" data-service-label="なし" data-two-pax="¥40,000" data-two-pax-num="40000" data-room-label="あり" data-start-label="18:00/20:30(2部制)" data-start-hour="18" data-reserve-url="https://tabelog.com/tokyo/A1307/A130701/13283447/" data-features="コスパがいい|つまみが充実|シャリが特徴的">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/rizaki.html">鮨利﨑 西麻布</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥20,000(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value">なし</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥40,000</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">あり</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">18:00/20:30(2部制)</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">コスパがいい</span><span class="feature-pill">つまみが充実</span><span class="feature-pill">シャリが特徴的</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130701/13283447/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="hikaku-card" data-id="kaishin" data-name="鮨 海心" data-price="18700" data-room="yes" data-service="some" data-course-price="¥18,700〜¥20,900(税込)" data-service-label="10%" data-two-pax="¥41,140〜" data-two-pax-num="41140" data-room-label="あり" data-start-label="18:00〜" data-start-hour="18" data-reserve-url="https://tabelog.com/tokyo/A1307/A130701/13181489/" data-features="つまみが充実|大将との会話が楽しい|コスパがいい">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/kaishin.html">鮨 海心</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥18,700〜¥20,900(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value">10%</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥41,140〜</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">あり</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">18:00〜</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">つまみが充実</span><span class="feature-pill">大将との会話が楽しい</span><span class="feature-pill">コスパがいい</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130701/13181489/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="hikaku-card" data-id="sushigen" data-name="寿司玄" data-price="22000" data-room="no" data-service="none" data-course-price="¥22,000(税込)" data-service-label="なし" data-two-pax="¥44,000" data-two-pax-num="44000" data-room-label="なし" data-start-label="17:00〜" data-start-hour="17" data-reserve-url="https://tabelog.com/tokyo/A1307/A130701/13049766/" data-features="王道の江戸前鮨|鮪が強い|大将との会話が楽しい">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/sushigen.html">寿司玄</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥22,000(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value">なし</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥44,000</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">なし</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">17:00〜</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">王道の江戸前鮨</span><span class="feature-pill">鮪が強い</span><span class="feature-pill">大将との会話が楽しい</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130701/13049766/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="hikaku-card" data-id="umu" data-name="鮓 有無" data-price="26400" data-room="no" data-service="some" data-course-price="¥26,400(税込)" data-service-label="10%" data-two-pax="¥58,080" data-two-pax-num="58080" data-room-label="なし" data-start-label="18:00〜" data-start-hour="18" data-reserve-url="https://tabelog.com/tokyo/A1307/A130703/13230826/" data-features="落ち着いた雰囲気|つまみが充実">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/umu.html">鮓 有無</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥26,400(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value">10%</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥58,080</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">なし</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">18:00〜</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">落ち着いた雰囲気</span><span class="feature-pill">つまみが充実</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130703/13230826/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="hikaku-card" data-id="hazan" data-name="鮨 波残" data-price="22000" data-room="yes" data-service="none" data-course-price="¥22,000(税込)" data-service-label="なし" data-two-pax="¥44,000" data-two-pax-num="44000" data-room-label="あり" data-start-label="18:00〜" data-start-hour="18" data-reserve-url="https://tabelog.com/tokyo/A1307/A130701/13276562/" data-features="シャリが特徴的|モダンな鮨">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/hazan.html">鮨 波残</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥22,000(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value">なし</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥44,000</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">あり</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">18:00〜</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">シャリが特徴的</span><span class="feature-pill">モダンな鮨</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130701/13276562/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="hikaku-card" data-id="sushiten" data-name="西麻布 すし天" data-price="17600" data-room="yes" data-service="none" data-course-price="¥17,600(税込)" data-service-label="なし" data-two-pax="¥35,200" data-two-pax-num="35200" data-room-label="あり" data-start-label="18:00〜" data-start-hour="18" data-reserve-url="https://tabelog.com/tokyo/A1307/A130701/13043229/" data-features="コスパがいい|王道の江戸前鮨|ボリュームがある">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/sushiten.html">西麻布 すし天</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥17,600(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value">なし</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥35,200</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">あり</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">18:00〜</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">コスパがいい</span><span class="feature-pill">王道の江戸前鮨</span><span class="feature-pill">ボリュームがある</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130701/13043229/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="hikaku-card" data-id="sushiichi" data-name="西麻布 鮨いち" data-price="22000" data-room="no" data-service="none" data-course-price="¥22,000(税込)" data-service-label="なし" data-two-pax="¥44,000" data-two-pax-num="44000" data-room-label="なし" data-start-label="17:00〜" data-start-hour="17" data-reserve-url="https://tabelog.com/tokyo/A1307/A130701/13186721/" data-features="王道の江戸前鮨|コスパがいい|落ち着いた雰囲気">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/sushiichi.html">西麻布 鮨いち</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥22,000(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value">なし</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥44,000</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">なし</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">17:00〜</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">王道の江戸前鮨</span><span class="feature-pill">コスパがいい</span><span class="feature-pill">落ち着いた雰囲気</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130701/13186721/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="hikaku-card" data-id="haru" data-name="成 西麻布" data-price="33000" data-room="yes" data-service="some" data-course-price="¥33,000〜(税込)" data-service-label="10%" data-two-pax="¥66,000〜" data-two-pax-num="66000" data-room-label="あり" data-start-label="18:00〜" data-start-hour="18" data-reserve-url="https://tabelog.com/tokyo/A1307/A130701/13224531/" data-features="王道の江戸前鮨">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/haru.html">成 西麻布</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥33,000〜(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value">10%</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥66,000〜</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">あり</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">18:00〜</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">王道の江戸前鮨</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130701/13224531/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="hikaku-card" data-id="murase" data-name="鮓 村瀬" data-price="33000" data-room="yes" data-service="some" data-course-price="¥33,000〜(税込)" data-service-label="10%" data-two-pax="¥57,200〜" data-two-pax-num="57200" data-room-label="あり" data-start-label="18:00〜" data-start-hour="18" data-reserve-url="https://tabelog.com/tokyo/A1307/A130701/13174475/" data-features="王道の江戸前鮨">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/murase.html">鮓 村瀬</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥33,000〜(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value">10%</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥57,200〜</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">あり</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">18:00〜</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">王道の江戸前鮨</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130701/13174475/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="hikaku-card" data-id="kinoshita" data-name="鮨 きのした" data-price="38500" data-room="yes" data-service="none" data-course-price="¥38,500〜(税込)" data-service-label="なし" data-two-pax="¥77,000〜" data-two-pax-num="77000" data-room-label="あり" data-start-label="18:00/20:30(2部制)" data-start-hour="18" data-reserve-url="https://tabelog.com/tokyo/A1307/A130701/13219373/" data-features="王道の江戸前鮨">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/kinoshita.html">鮨 きのした</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥38,500〜(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value">なし</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥77,000〜</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">あり</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">18:00/20:30(2部制)</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">王道の江戸前鮨</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130701/13219373/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="hikaku-card" data-id="sushitsuu" data-name="江戸前鮓 すし通" data-price="38500" data-room="yes" data-service="unknown" data-course-price="¥38,500〜(税込)" data-service-label="情報なし(要問合せ)" data-two-pax="¥77,000〜" data-two-pax-num="77000" data-room-label="あり" data-start-label="18:00〜" data-start-hour="18" data-reserve-url="https://tabelog.com/tokyo/A1307/A130701/13061640/" data-features="王道の江戸前鮨">
-        <div class="hikaku-body">
-          <h3 class="hikaku-name"><a href="shops/sushitsuu.html">江戸前鮓 すし通</a></h3>
-          <div class="hikaku-fields">
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">コース料金</span><span class="field-value">¥38,500〜(税込)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="16" text-anchor="middle" font-size="13" font-family="sans-serif" fill="currentColor">%</text></svg><span class="field-label">サービス料</span><span class="field-value is-unknown">情報なし(要問合せ)</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><text x="12" y="17" text-anchor="middle" font-size="15" font-family="sans-serif" fill="currentColor">¥</text></svg><span class="field-label">2名・料理利用額</span><span class="field-value">¥77,000〜</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="3" width="12" height="18" rx="1"/><circle cx="14.5" cy="12" r="1" fill="currentColor" stroke="none"/></svg><span class="field-label">個室</span><span class="field-value">あり</span></div>
-            <div class="field-row"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span class="field-label">開始時間</span><span class="field-value">18:00〜</span></div>
-          </div>
-          <div class="hikaku-features"><span class="feature-pill">王道の江戸前鮨</span></div>
-          <div class="hikaku-actions">
-            <button type="button" class="btn-add-compare">比較に追加 ＋</button>
-            <a class="btn-reserve" href="https://tabelog.com/tokyo/A1307/A130701/13061640/" target="_blank" rel="noopener">予約する(食べログ)</a>
-          </div>
-        </div>
-      </article>
-
+    <div class="area-intro" style="margin-top:32px;">
+      <h2 style="margin-bottom:12px;">モノサシの使い方</h2>
+      <p>絞り込む → 店舗を見る → 3店比較する → 店を決める → 予約する。価格・サービス料・2名利用額・個室・開始時間・特徴を同じ画面で比較し、そのまま予約ページへ進めます。</p>
     </div>
-
-    <div class="compare-tray" id="compare-tray" hidden>
-      <div class="compare-tray-head">
-        <h2>3店舗比較</h2>
-        <p>最大3店舗まで比較できます。</p>
-      </div>
-      <div class="compare-table-wrap" id="compare-table-wrap"></div>
-      <p class="compare-empty" id="compare-empty" hidden>比較する店舗を選んでください。</p>
-    </div>
-
   </div>
 </section>
 
@@ -342,10 +61,9 @@
   <div class="container">
     <p>モノサシ — 西麻布の鮨を、選びやすく。(プロトタイプ)</p>
     <p style="margin-top:8px;">鮨屋の選び方:<a href="columns/index.html" style="color:#d4b483;"> コラム一覧</a></p>
-    <p style="margin-top:8px;">その他:<a href="areas/nishiazabu.html" style="color:#d4b483;"> 西麻布エリアガイド</a> / <a href="for-owners.html" style="color:#d4b483;"> 掲載店舗様へ</a></p>
+    <p style="margin-top:8px;">その他:<a href="nishiazabu/sushi/index.html" style="color:#d4b483;"> 西麻布エリアの鮨一覧</a> / <a href="for-owners.html" style="color:#d4b483;"> 掲載店舗様へ</a></p>
   </div>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>

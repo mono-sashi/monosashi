@@ -768,6 +768,49 @@ img { max-width: 100%; display: block; }
 }
 .area-links a:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
+/* 条件別ページへの内部リンク(店舗詳細・条件ページ共通) */
+.cond-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.cond-links a, .cond-links .related-item a {
+  font-size: 13px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  display: inline-block;
+}
+.cond-links a:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.related-similar { margin-top: 16px; }
+.related-similar p { font-size: 13px; color: var(--text-sub); margin-bottom: 8px; }
+
+/* エリアトップの「目的から探す」カード */
+.cond-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.cond-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+.cond-card:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.cond-card-arrow { color: var(--gold); }
+
 /* Footer */
 .site-footer {
   background: var(--navy);
