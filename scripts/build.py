@@ -750,8 +750,8 @@ def build_area_top_page():
 # ---------------------------------------------------------------------------
 def build_redirect_page(new_path, depth, title):
     up = "../" * depth
+    new_path = seo_url(new_path)
     new_url = f"{SITE_URL}{new_path}"
-    new_rel = up.rstrip("/") + new_path if False else None
     # ルート相対で組み直す(旧ファイルからの相対パス)
     rel = up + new_path.lstrip("/")
     return f"""<!DOCTYPE html>
