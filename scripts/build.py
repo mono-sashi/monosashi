@@ -183,6 +183,9 @@ def head_common(title, description, canonical_path, depth):
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(description)}">
 <link rel="canonical" href="{og_url}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
 <link rel="stylesheet" href="{up}style.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{BRAND}">
@@ -208,8 +211,8 @@ def footer_common(up):
     return f"""<footer class="site-footer">
   <div class="container">
     <p>{BRAND} — 西麻布の鮨を、選びやすく。(プロトタイプ)</p>
-    <p style="margin-top:8px;">鮨屋の選び方:<a href="{up}columns/index.html" style="color:#d4b483;"> コラム一覧</a></p>
-    <p style="margin-top:8px;">その他:<a href="{up}nishiazabu/sushi/index.html" style="color:#d4b483;"> 西麻布エリアの鮨一覧</a> / <a href="{up}for-owners.html" style="color:#d4b483;"> 掲載店舗様へ</a></p>
+    <p style="margin-top:8px;">鮨屋の選び方:<a href="{up}columns/index.html" style="color:#d4b483;text-decoration:underline;"> コラム一覧</a></p>
+    <p style="margin-top:8px;">その他:<a href="{up}nishiazabu/sushi/index.html" style="color:#d4b483;text-decoration:underline;"> 西麻布エリアの鮨一覧</a> / <a href="{up}for-owners.html" style="color:#d4b483;text-decoration:underline;"> 掲載店舗様へ</a></p>
   </div>
 </footer>"""
 
@@ -441,7 +444,7 @@ def build_shop_page(shop):
   <div class="container">
     <h2>関連ページ</h2>
     <div class="cond-links">{"".join(f'<span class="related-item">{l}</span>' for l in related_links)}</div>{similar_html}
-    <p style="margin-top:16px;"><a href="{up}nishiazabu/sushi/index.html" style="color:#d4b483;">最大3店舗で比較する</a></p>
+    <p style="margin-top:16px;"><a href="{up}nishiazabu/sushi/index.html" style="color:#7a5f3a;text-decoration:underline;">最大3店舗で比較する</a></p>
   </div>
 </section>"""
 
@@ -485,6 +488,8 @@ def build_shop_page(shop):
 <body>
 
 {header_nav(up)}
+
+<main>
 
 <section class="detail-hero">
   <div class="container">
@@ -542,6 +547,8 @@ def build_shop_page(shop):
   </div>
 </section>
 {related_section}
+</main>
+
 {footer_common(up)}
 
 </body>
@@ -605,6 +612,8 @@ def build_condition_page(cond):
 
 {header_nav(up)}
 
+<main>
+
 <section class="detail-hero">
   <div class="container">
     <div class="breadcrumb"><a href="{up}nishiazabu/sushi/index.html">店舗一覧</a> / <a href="{up}nishiazabu/sushi/index.html">{esc(AREA['name'])}エリア</a> / {esc(cond['label'])}</div>
@@ -627,9 +636,11 @@ def build_condition_page(cond):
     {body_html}
     <h2 style="margin-top:32px;">他の条件で探す</h2>
     {condition_links_html(up, current_slug=cond['slug'])}
-    <p style="margin-top:20px;"><a href="{up}nishiazabu/sushi/index.html" style="color:#d4b483;">絞り込み・3店舗比較はこちら</a></p>
+    <p style="margin-top:20px;"><a href="{up}nishiazabu/sushi/index.html" style="color:#7a5f3a;text-decoration:underline;">絞り込み・3店舗比較はこちら</a></p>
   </div>
 </section>
+
+</main>
 
 {footer_common(up)}
 
@@ -713,6 +724,8 @@ def build_area_top_page():
 
 {header_nav(up)}
 
+<main>
+
 <section class="detail-hero">
   <div class="container">
     <div class="breadcrumb"><a href="{up}index.html">トップ</a> / {esc(AREA['name'])}の{esc(AREA['genreName'])}</div>
@@ -769,6 +782,8 @@ def build_area_top_page():
   </div>
 </section>
 
+</main>
+
 {footer_common(up)}
 
 <script src="{up}script.js"></script>
@@ -806,7 +821,7 @@ def build_redirect_page(new_path, depth, title):
 <section class="detail-section">
   <div class="container">
     <p>このページは新しいURLに移動しました。自動的に移動しない場合は、下記のリンクからお進みください。</p>
-    <p style="margin-top:16px;"><a href="{rel}" style="color:#d4b483;">{esc(title)}へ進む</a></p>
+    <p style="margin-top:16px;"><a href="{rel}" style="color:#7a5f3a;text-decoration:underline;">{esc(title)}へ進む</a></p>
   </div>
 </section>
 </body>
