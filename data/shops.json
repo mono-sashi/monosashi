@@ -333,7 +333,7 @@
       "roomDetail": "あり(2〜10名、最大15名、1階貸切可)",
       "startLabel": "18:00〜",
       "startHourTags": [18],
-      "features": ["王道の江戸前鮨"],
+      "features": ["王道の江戸前鮨", "つまみが充実"],
       "sceneRows": [
         {"label": "接待・会食", "value": "◎ テーブル席を個室利用可(最大8名、貸切20名以下対応)", "unknown": false},
         {"label": "記念日", "value": "○ 個室利用可能", "unknown": false},
@@ -389,7 +389,7 @@
       "roomDetail": "あり(8名まで)",
       "startLabel": "18:00〜",
       "startHourTags": [18],
-      "features": ["王道の江戸前鮨"],
+      "features": ["季節感が強い", "つまみが充実", "落ち着いた雰囲気"],
       "sceneRows": [
         {"label": "接待・会食", "value": "◎ 個室8名まで対応", "unknown": false},
         {"label": "記念日", "value": "○ 個室利用可能", "unknown": false},
@@ -445,7 +445,7 @@
       "roomDetail": "あり(4席、要相談)",
       "startLabel": "18:00/20:30(2部制)",
       "startHourTags": [18, 2030],
-      "features": ["王道の江戸前鮨"],
+      "features": ["落ち着いた雰囲気", "接客が丁寧", "貝が強い"],
       "sceneRows": [
         {"label": "接待・会食", "value": "○ 個室1部屋あり", "unknown": false},
         {"label": "記念日", "value": "○ 個室利用可能", "unknown": false},
@@ -502,7 +502,7 @@
       "roomDetail": "あり(2人用・4人用・6人用、3室)",
       "startLabel": "18:00〜",
       "startHourTags": [18],
-      "features": ["王道の江戸前鮨"],
+      "features": ["王道の江戸前鮨", "鮪が強い", "落ち着いた雰囲気"],
       "sceneRows": [
         {"label": "接待・会食", "value": "◎ 個室3室あり(2〜6名対応)", "unknown": false},
         {"label": "記念日", "value": "○ 個室利用可能", "unknown": false},

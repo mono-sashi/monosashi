@@ -154,7 +154,7 @@ CONDITIONS = [
         "lead": "特徴タグは公式情報および口コミの定量基準(5人以上の独立言及)にもとづき機械的に付与しています。",
         "body": [
             "「落ち着いた雰囲気」タグは、店内の静けさや接客のトーンについて口コミで独立した言及が5人以上確認できた店舗に付与しています。会話を楽しみたい会食や、年配のゲストを連れていく接待など、賑やかさより落ち着きを優先したいシーンでの参考にしてください。",
-            "該当するのは鮓 有無・西麻布 鮨いちの2店舗のみです。いずれも個室ではなくカウンター席が中心の店構えで、周りを気にせず過ごしたい場合は個室ありのページもあわせてご確認ください。",
+            "該当するのは鮓 有無・西麻布 鮨いち・鮓 村瀬・鮨 きのした・江戸前鮓 すし通の5店舗です。このうち鮓 村瀬・鮨 きのした・江戸前鮓 すし通は個室を備えており、静かな空間で少人数の会食をしたい場合の候補になります。鮓 有無・西麻布 鮨いちはカウンター中心の店構えで、落ち着いたトーンのなかで大将の仕事を間近に見たい方に向いています。",
         ],
         "filter": lambda s: "落ち着いた雰囲気" in s.get("features", []),
     },
@@ -314,12 +314,15 @@ def filter_panel_html():
           <label class="check-pill"><input type="checkbox" data-filter="feature" value="コスパがいい"><span>コスパがいい</span></label>
           <label class="check-pill"><input type="checkbox" data-filter="feature" value="落ち着いた雰囲気"><span>落ち着いた雰囲気</span></label>
           <label class="check-pill"><input type="checkbox" data-filter="feature" value="大将との会話が楽しい"><span>大将との会話が楽しい</span></label>
+          <label class="check-pill"><input type="checkbox" data-filter="feature" value="接客が丁寧"><span>接客が丁寧</span></label>
           <label class="check-pill"><input type="checkbox" data-filter="feature" value="王道の江戸前鮨"><span>王道の江戸前鮨</span></label>
           <label class="check-pill"><input type="checkbox" data-filter="feature" value="モダンな鮨"><span>モダンな鮨</span></label>
           <label class="check-pill"><input type="checkbox" data-filter="feature" value="鮪が強い"><span>鮪が強い</span></label>
+          <label class="check-pill"><input type="checkbox" data-filter="feature" value="貝が強い"><span>貝が強い</span></label>
           <label class="check-pill"><input type="checkbox" data-filter="feature" value="シャリが特徴的"><span>シャリが特徴的</span></label>
           <label class="check-pill"><input type="checkbox" data-filter="feature" value="つまみが充実"><span>つまみが充実</span></label>
           <label class="check-pill"><input type="checkbox" data-filter="feature" value="ボリュームがある"><span>ボリュームがある</span></label>
+          <label class="check-pill"><input type="checkbox" data-filter="feature" value="季節感が強い"><span>季節感が強い</span></label>
         </div>
       </div>
 
