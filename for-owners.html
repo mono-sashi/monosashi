@@ -20,6 +20,18 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BE7Z8CKVQM"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-BE7Z8CKVQM');
+document.addEventListener('click',function(e){
+  var t=e.target;if(!t||!t.closest)return;
+  var a=t.closest('a.btn-reserve');if(!a)return;
+  var c=a.closest('[data-name]');
+  gtag('event','reserve_click',{shop_name:c?c.getAttribute('data-name'):'',link_url:a.href});
+});
+</script>
 </head>
 <body>
 

@@ -20,6 +20,23 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE_URL = "https://sushi-monosashi.com"
 BRAND = "モノサシ"
+GA_MEASUREMENT_ID = "G-BE7Z8CKVQM"
+
+# GA4(gtag.js)。全生成ページの<head>に挿入。あわせて予約ボタン(a.btn-reserve)の
+# クリックを reserve_click イベント(店名付き)として送る。手書きページ
+# (index.html / for-owners.html / columns/*.html)にも同じブロックを直接記載している。
+GA_SNIPPET = f"""<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}
+gtag('js',new Date());gtag('config','{GA_MEASUREMENT_ID}');
+document.addEventListener('click',function(e){{
+  var t=e.target;if(!t||!t.closest)return;
+  var a=t.closest('a.btn-reserve');if(!a)return;
+  var c=a.closest('[data-name]');
+  gtag('event','reserve_click',{{shop_name:c?c.getAttribute('data-name'):'',link_url:a.href}});
+}});
+</script>"""
 
 with open(os.path.join(ROOT, "data", "shops.json"), encoding="utf-8") as f:
     DATA = json.load(f)
@@ -231,7 +248,8 @@ def head_common(title, description, canonical_path, depth):
 <meta property="og:image" content="{SITE_URL}/assets/ogp-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">"""
+<meta name="twitter:card" content="summary_large_image">
+{GA_SNIPPET}"""
 
 
 def header_nav(up):
