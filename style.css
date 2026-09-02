@@ -845,6 +845,10 @@ img { max-width: 100%; display: block; }
   .nav-links a { white-space: nowrap; }
   .nav-links::-webkit-scrollbar { display: none; }
   .info-grid { grid-template-columns: 120px 1fr; font-size: 13px; }
+  /* 多列テーブル(コラムの早見表・価格帯表)は横スクロールにして、
+     狭幅で1文字ずつ縦積みになるのを防ぐ */
+  .price-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+  .price-table th, .price-table td { padding: 12px 14px; }
 }
 
 /* ==========================================================================
