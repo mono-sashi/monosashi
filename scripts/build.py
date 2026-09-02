@@ -933,7 +933,7 @@ def main():
     sitemap_urls = ["/index.html", f"/{AREA['slug']}/{AREA['genreSlug']}/index.html"]
     sitemap_urls += [f"/{AREA['slug']}/{AREA['genreSlug']}/{s['slug']}/index.html" for s in SHOPS]
     sitemap_urls += [f"/{AREA['slug']}/{AREA['genreSlug']}/{c['slug']}/index.html" for c in CONDITIONS]
-    sitemap_urls += ["/columns/index.html", "/columns/date-guide.html", "/columns/entertain-guide.html", "/columns/anniversary-guide.html", "/columns/scene-guide.html", "/for-owners.html"]
+    sitemap_urls += ["/columns/index.html", "/columns/date-guide.html", "/columns/entertain-guide.html", "/columns/anniversary-guide.html", "/columns/budget-guide.html", "/columns/scene-guide.html", "/for-owners.html"]
     written.append(write("sitemap.xml", build_sitemap(sitemap_urls)))
     written.append(write("robots.txt", build_robots()))
 
